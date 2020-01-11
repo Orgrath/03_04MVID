@@ -3,14 +3,14 @@
 
 #include "engine/input.hpp"
 #include "engine/window.hpp"
-
+#include <glm/gtc/matrix_transform.hpp>
 #include <iostream>
 
 void handleInput() {
-    std::vector<std::pair<int, int>> keys = Input::instance()->getKeys();
+    /*std::vector<std::pair<int, int>> keys = Input::instance()->getKeys();
     for (auto& key : keys) {
         std::cout << key.first << " - " << key.second << std::endl;
-    }
+    }*/
 }
 
 bool checkShader(uint32_t shader) {
