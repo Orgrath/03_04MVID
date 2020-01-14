@@ -35,9 +35,9 @@ CubePolar::CubePolar(float radio, glm::vec3 inicio) : _radio(radio), _inicio(ini
             }
 
             //Front and back
-            positions[i] = (radio * sin(glm::radians(omega)) * cos(glm::radians(theta))) + ejex;   // x
-            positions[i++] = (radio * sin(glm::radians(omega)) * sin(glm::radians(theta))) + ejey; // y
-            positions[i++] = z * (radio * cos(glm::radians(omega))) + ejez;                        // z
+            positions[i] = (radio * sin(glm::radians(omega)) * cos(glm::radians(theta))) + inicio.x;   // x
+            positions[i++] = (radio * sin(glm::radians(omega)) * sin(glm::radians(theta))) + inicio.y; // y
+            positions[i++] = z * (radio * cos(glm::radians(omega))) + inicio.z;                        // z
 
             //break;
         }
@@ -50,9 +50,9 @@ CubePolar::CubePolar(float radio, glm::vec3 inicio) : _radio(radio), _inicio(ini
             }
 
             //Rigth and Left
-            positions[i] = x * (radio * cos(glm::radians(omega))) + ejex;                          // x
-            positions[i++] = (radio * sin(glm::radians(omega)) * sin(glm::radians(theta))) + ejey; // y
-            positions[i++] = (radio * sin(glm::radians(omega)) * cos(glm::radians(theta))) + ejez; // z
+            positions[i] = x * (radio * cos(glm::radians(omega))) + inicio.x;                          // x
+            positions[i++] = (radio * sin(glm::radians(omega)) * sin(glm::radians(theta))) + inicio.y; // y
+            positions[i++] = (radio * sin(glm::radians(omega)) * cos(glm::radians(theta))) + inicio.z; // z
 
             //break;
         }else if (j == 24 && j < 35){
@@ -64,9 +64,9 @@ CubePolar::CubePolar(float radio, glm::vec3 inicio) : _radio(radio), _inicio(ini
             }
 
             //top and bottom
-            positions[i] = (radio * sin(glm::radians(omega)) * cos(glm::radians(theta))) + ejex;   // x
-            positions[i++] = y * (radio * cos(glm::radians(omega))) + ejey;                        // y
-            positions[i++] = (radio * sin(glm::radians(omega)) * sin(glm::radians(theta))) + ejez; // z
+            positions[i] = (radio * sin(glm::radians(omega)) * cos(glm::radians(theta))) + inicio.x;   // x
+            positions[i++] = y * (radio * cos(glm::radians(omega))) + inicio.y;                        // y
+            positions[i++] = (radio * sin(glm::radians(omega)) * sin(glm::radians(theta))) + inicio.z; // z
 
             //break;
         }
