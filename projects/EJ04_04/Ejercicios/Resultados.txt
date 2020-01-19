@@ -1,0 +1,6 @@
+GL_LINEAR:
+Se aprecia con el filtrado LINEAR como la imagen presenta un suavizado en las zonas donde el color cambia abruptamente.
+
+GL_NEAREST:
+En el caso de NEAREST la imagen presenta un pixelado mas llamativo generando que las zonas donde el color cambia se 
+generen pizeles de un u otro y propiciando un cuadriculado de colores distintos.
