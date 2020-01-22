@@ -15,7 +15,7 @@ void render(const Geometry& geom, const Shader& shader, Texture& tex) {
     glClear(GL_COLOR_BUFFER_BIT);
 
     glm::mat4 model = glm::mat4(1.0f);
-    //model = glm::rotate(model, static_cast<float>(glfwGetTime())* glm::radians(20.0f), glm::vec3(0.5f, 1.0f, 0.0f));
+    model = glm::rotate(model, static_cast<float>(glfwGetTime())* glm::radians(20.0f), glm::vec3(0.5f, 1.0f, 0.0f));
 
     glm::mat4 view = glm::mat4(1.0f);
     view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
@@ -41,7 +41,7 @@ int main(int, char* []) {
     const Shader shader("../projects/EJ05_01/vertex.vs", "../projects/EJ05_01/fragment.fs");
     //const Cube cube(1.0f);
 
-    glm::vec3 inicio = { 0.0f,0.0f,0.0f };
+    glm::vec3 inicio = { 0.0f, 0.0f, 0.0f };
     const CubePolar cube(1.0f, inicio);
 
     Texture tex("../assets/textures/blue_blocks.jpg", Texture::Format::RGB);
