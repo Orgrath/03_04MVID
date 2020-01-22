@@ -1,12 +1,12 @@
-#ifndef __CUBE_H__
-#define __CUBE_H__ 1
+#ifndef __CUBE_EJ05_02_H__
+#define __CUBE_EJ05_02_H__ 1
 
 #include "geometry.hpp"
 
-class Cube final : public Geometry {
+class CubeWrapp final : public Geometry {
     public:
-        Cube() = delete;
-        explicit Cube(float size);
+        CubeWrapp() = delete;
+        explicit CubeWrapp(float size);
 
     private:
         float _size;

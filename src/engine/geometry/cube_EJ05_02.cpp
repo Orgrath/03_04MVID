@@ -1,6 +1,6 @@
-#include "engine/geometry/cube.hpp"
+#include "engine/geometry/cube_EJ05_02.hpp"
 
-Cube::Cube(float size) : _size(size) {
+CubeWrapp::CubeWrapp(float size) : _size(size) {
     _nVertices = 6 * 2 * 3;   //6 faces * 2 triangles * 3 vertices;
     _nElements = _nVertices;
 
@@ -59,7 +59,7 @@ Cube::Cube(float size) : _size(size) {
                     0.5f, 0.75f,
 
                     0.25f, 0.5f,
-                    0.5f, 0.5f,
+                    0.5f, 0.75f,
                     0.25f, 0.75f,
 
                     0.5f, 0.5f,   //right
@@ -67,7 +67,7 @@ Cube::Cube(float size) : _size(size) {
                     0.75f, 0.75f,
 
                     0.5f, 0.5f,
-                    0.75f, 0.5f,
+                    0.75f, 0.75f,
                     0.5f, 0.75f,
 
                     0.75f, 0.5f,   //back
@@ -75,7 +75,7 @@ Cube::Cube(float size) : _size(size) {
                     1.0f, 0.75f,
 
                     0.75f, 0.5f,
-                    1.0f, 0.5f,
+                    1.0f, 0.75f,
                     0.75f, 0.75f,
 
                     0.0f, 0.5f,   //left
@@ -83,7 +83,7 @@ Cube::Cube(float size) : _size(size) {
                     0.25f, 0.75f,
 
                     0.0f, 0.5f,
-                    0.25f, 0.5f,
+                    0.25f, 0.75f,
                     0.0f, 0.75f,
 
                     0.25f, 0.25f,   //bottom
@@ -91,7 +91,7 @@ Cube::Cube(float size) : _size(size) {
                     0.5f, 0.5f,
 
                     0.25f, 0.25f,
-                    0.5f, 0.25f,
+                    0.5f, 0.5f,
                     0.25f, 0.5f,
 
                     0.25f, 0.75f,   //top
@@ -99,7 +99,7 @@ Cube::Cube(float size) : _size(size) {
                     0.5f, 1.0f,
 
                     0.25f, 0.75f,
-                    0.5f, 0.75f,
+                    0.5f, 1.0f,
                     0.25f, 1.0f};
 
     float normals[] = { 0.0f, 0.0f, 1.0f,  //front
