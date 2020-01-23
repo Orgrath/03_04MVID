@@ -1,0 +1,5 @@
+Respuesta EJ05_03:
+
+Por lo que se aprecia si que es relevante el orden de aplicación de las transformaciones. Para el caso original 
+la cámara es fija y la rotación se aplica sobre el cubo, en el caso de invertirlas, el cubo está fijo mientras la 
+cámara es la que esta rotando. De ahí que el cubo muestre la misma cara cada vez que la cámara rota sobre si misma.
