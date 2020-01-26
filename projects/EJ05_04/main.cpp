@@ -12,7 +12,8 @@
 void handleInput() {/*Intentionally Left BLank*/ }
 
 void render(const Geometry& geom1, const Geometry& geom2, const Shader& shader, Texture& tex1, Texture& tex2) {
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glDepthFunc(GL_LESS);
 
     glm::mat4 view = glm::mat4(1.0f);
     view = glm::translate(view, glm::vec3(0.0f, -0.65f, -3.0f));
@@ -28,7 +29,7 @@ void render(const Geometry& geom1, const Geometry& geom2, const Shader& shader, 
     glm::vec3 cubePositions[] = {
         glm::vec3(1.0f, 1.0f, 1.0f),
         glm::vec3(0.5f, 0.5f, 0.5f),
-        glm::vec3(0.0f, 0.0f, 0.0f),
+        glm::vec3(0.0f, 0.1f, 0.0f),
         glm::vec3(-0.5f, 0.5f, -0.5f),
         glm::vec3(-1.0f, 1.0f, -1.0f),
     };
@@ -151,6 +152,7 @@ int main(int, char* []) {
     Texture tex1("../assets/textures/bricks_arrow.jpg", Texture::Format::RGB);
 
     glEnable(GL_CULL_FACE);
+    glEnable(GL_DEPTH_TEST);
     glCullFace(GL_BACK);
 
     while (window->alive()) {
