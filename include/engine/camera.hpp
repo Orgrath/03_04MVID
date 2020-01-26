@@ -5,6 +5,7 @@
 const float k_Yaw = -90.0f;
 const float k_Pitch = 0.0f;
 const float k_Speed = 2.5f;
+const float k_Speed_EJ06_01 = 1.5f;
 const float k_Sensitivity = 0.1f;
 const float k_FOV = 45.0f;
 
@@ -21,10 +22,12 @@ class Camera {
         Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch);
 
         glm::mat4 getViewMatrix() const;
+        glm::mat4 getViewMatrix_EJ06_02() const;
         float getFOV() const;
         glm::vec3 getPosition() const;
 
         void handleKeyboard(Movement direction, float dt);
+        void handleKeyboard_EJ06_01(Movement direction, float dt);
         void handleMouseMovement(float xoffset, float yoffset, bool constrainPitch = true);
         void handleMouseScroll(float yoffset);
 

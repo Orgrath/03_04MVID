@@ -17,6 +17,25 @@ glm::mat4 Camera::getViewMatrix() const {
     return glm::lookAt(_position, _position + _front, _up);
 }
 
+glm::mat4 Camera::getViewMatrix_EJ06_02() const {
+
+    glm::vec3 camDir = glm::normalize(_position - _front);
+    glm::vec3 camRight = glm::normalize(glm::cross(_up, camDir));
+    glm::vec3 camUp = glm::cross(camDir, camRight);
+
+    glm::mat4 view = { camRight.x, camRight.y, camRight.z, 0,
+                        camUp.x, camUp.y, camUp.z, 0,
+                        camDir.x, camDir.y, camDir.z, 0,
+                        0, 0, 0, 1};
+
+    glm::mat4 pos = {1, 0, 0, - _position.x, 
+                     0, 1, 0, - _position.y,
+                     0, 0, 1, - _position.z,
+                     0, 0, 0, 1};
+    
+    return view * pos;
+}
+
 float Camera::getFOV() const {
     return _fov;
 }
@@ -45,6 +64,18 @@ void Camera::handleKeyboard(Movement direction, float dt) {
         case Movement::Left: _position -= _right * velocity; break;
         case Movement::Right: _position += _right * velocity; break;
         default:;
+    }
+}
+
+void Camera::handleKeyboard_EJ06_01(Movement direction, float dt) {
+    const float velocity = k_Speed_EJ06_01 * dt;
+
+    switch (direction) {
+    case Movement::Forward: _position += glm::vec3{ _front.x, 0.0f, _front.z } * velocity; break;
+    case Movement::Backward: _position -= glm::vec3{ _front.x, 0.0f, _front.z } * velocity; break;
+    case Movement::Left: _position -= _right * velocity; break;
+    case Movement::Right: _position += _right * velocity; break;
+    default:;
     }
 }
 
