@@ -1,0 +1,9 @@
+Ejercicio EJ07.02 - Cambiar valores de ambient, diffuse, specular y shininess y ver como se comporta el modelo de iluminación.
+
+	- ambient: Este varia en base a la intensidad y el color haciendo que aumente o diusminuya el color escogido, desde verse completamente negro hasta 100% del mismo.
+	- diffuse: Este varia por dos componentes, la posición y el color. En cuanto a la posición solamente varia la cantidad de la esfera 
+			   que llega a iluminar desde una pequeña franja hasta un poco más de la mitad.
+			   En cuanto al color, este lo que provoca es que color va a reflejar el objeto. Este dependerá del tipo de color de la luz y del color del objeto.
+	-specular: Este depende de varios valores como es el color, su intensidad y la posición de la cámara respecto a la fuente de luz.
+			   Al final se traduce en donde veremos el punto de luz en la esfera, su intensidad y el color del mismo
+	-shininess: Este valor aumenta o disninuye el tamaño del reflejo, desde practicamente ocupar la media esfera hasta posiblemente un punto minúsculo.
