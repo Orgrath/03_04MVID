@@ -1,0 +1,10 @@
+-ambient: Manipular este parámetro hace que la esfera se ilumine(recibe luz por todos los lados) y en el caso de luz blanca, hace que la esfera muestre
+	  su color por todos los lados.
+
+-diffuse: Manipular este parámetro influye en la cantidad de luminosidad(En la superficie de la esfera) de la zona donde proyecta la luz directamente.
+	  Desde practicamente nulo con valores 0.1f a muy iluminado con valores 0.9f.
+
+-specular: Manipular este parámetro influye en el tamaño del reflejo en la superficie de la esfera.
+
+
+Todos los valores pueden además en base a los valores RGB influenciar en el color de la esfera, por el tipo de iluminación dada.
