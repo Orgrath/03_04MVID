@@ -11,6 +11,8 @@
 #include "engine/window.hpp"
 #include "engine/geometry/sphere.hpp"
 
+#include <iostream>
+
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 float lastFrame = 0.0f;
 float lastX, lastY;
@@ -20,11 +22,9 @@ void handleInput(float dt) {
     Input* input = Input::instance();
 
     if (input->isKeyPressed(GLFW_KEY_W)) {
-        //camera.handleKeyboard(Camera::Movement::Forward, dt);
         camera.handleKeyboard_EJ06_01(Camera::Movement::Forward, dt);
     }
     if (input->isKeyPressed(GLFW_KEY_S)) {
-        //camera.handleKeyboard(Camera::Movement::Backward, dt);
         camera.handleKeyboard_EJ06_01(Camera::Movement::Backward, dt);
     }
     if (input->isKeyPressed(GLFW_KEY_A)) {
@@ -99,7 +99,6 @@ void render(const Geometry& geom1, const Geometry& geom2, const Shader& shader, 
     geom2.render();
 
     shader.use();
-    //shader.set("view", camera.getViewMatrix());
     shader.set("view", camera.getViewMatrix_EJ06_02());
     shader.set("proj", proj);  //TODO const mat4
 
@@ -109,9 +108,6 @@ void render(const Geometry& geom1, const Geometry& geom2, const Shader& shader, 
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, cubePositions[i]);
         model = glm::scale(model, cubeScales[i]);
-        //model = glm::rotate(model, glm::radians(75.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-        //float angle = 10.0f + (20.0f * i);
-        //model1 = glm::rotate(model1, static_cast<float>(glfwGetTime())* glm::radians(angle), glm::vec3(0.5f, 1.0f, 0.0f));
         shader.set("model", model);
 
         geom1.render();
@@ -148,8 +144,6 @@ int main(int, char* []) {
     glClearColor(0.0f, 0.3f, 0.6f, 1.0f);
 
     const Shader shader("../projects/EJ06_01/vertex.vs", "../projects/EJ06_01/fragment.fs");
-    //const Cube cube(1.0f);
-    //const Sphere sphere(1.0f, 50, 50);
     const Cube cube(0.2f);
     const Quad quad(3.0f);
 
@@ -170,7 +164,6 @@ int main(int, char* []) {
         lastFrame = currentFrame;
 
         handleInput(deltaTime);
-        //render(sphere, shader, tex);
         render(cube, quad, shader, tex, tex1);
         window->frame();
     }

@@ -14,25 +14,27 @@ Camera::Camera(float posX, float posY, float posZ, float upX, float upY, float u
 
 
 glm::mat4 Camera::getViewMatrix() const {
+
     return glm::lookAt(_position, _position + _front, _up);
 }
 
 glm::mat4 Camera::getViewMatrix_EJ06_02() const {
 
-    glm::vec3 camDir = glm::normalize(_position - _front);
+    glm::vec3 camDir = glm::normalize(_position - (_position + _front));
+
     glm::vec3 camRight = glm::normalize(glm::cross(_up, camDir));
-    glm::vec3 camUp = glm::cross(camDir, camRight);
-
-    glm::mat4 view = { camRight.x, camRight.y, camRight.z, 0,
-                        camUp.x, camUp.y, camUp.z, 0,
-                        camDir.x, camDir.y, camDir.z, 0,
-                        0, 0, 0, 1};
-
-    glm::mat4 pos = {1, 0, 0, - _position.x, 
-                     0, 1, 0, - _position.y,
-                     0, 0, 1, - _position.z,
-                     0, 0, 0, 1};
+    glm::vec3 camUp = glm::normalize(glm::cross(camDir, camRight));
     
+    glm::mat4 view = { camRight.x, camUp.x , camDir.x, 0.0f,
+                        camRight.y, camUp.y, camDir.y, 0.0f,
+                        camRight.z, camUp.z, camDir.z, 0.0f,
+                        0.0f, 0.0f, 0.0f, 1.0f };
+
+    glm::mat4 pos = { 1.0f, 0.0f, 0.0f, 0.0f,
+                     0.0f, 1.0f, 0.0f, 0.0f,
+                     0.0f, 0.0f, 1.0f, 0.0f,
+                    - _position.x, - _position.y, - _position.z, 1.0f };
+
     return view * pos;
 }
 
