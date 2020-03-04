@@ -25,6 +25,7 @@ class Camera {
         glm::mat4 getViewMatrix_EJ06_02() const;
         float getFOV() const;
         glm::vec3 getPosition() const;
+        glm::vec3 getForward() const;
 
         void handleKeyboard(Movement direction, float dt);
         void handleKeyboard_EJ06_01(Movement direction, float dt);
