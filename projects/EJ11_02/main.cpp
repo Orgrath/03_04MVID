@@ -108,7 +108,7 @@ void render(const Geometry& floor, const Geometry& quads, const Shader& s_phong,
 
     //Quad 1
     model = glm::mat4(1.0f);
-    model = glm::translate(model, glm::vec3(0.0f,0.5f,-5.0f));
+    model = glm::translate(model, glm::vec3(0.0f,0.5f,5.0f));
     s_phong.set("model", model);
 
     normalMat = glm::inverse(glm::transpose(glm::mat3(model)));
@@ -120,7 +120,7 @@ void render(const Geometry& floor, const Geometry& quads, const Shader& s_phong,
 
     //Quad 2
     model = glm::mat4(1.0f);
-    model = glm::translate(model, glm::vec3(0.0f, 0.5f, -3.0f));
+    model = glm::translate(model, glm::vec3(0.0f, 0.5f, 3.0f));
     s_phong.set("model", model);
     s_phong.set("type", 1);
 
@@ -145,7 +145,7 @@ void render(const Geometry& floor, const Geometry& quads, const Shader& s_phong,
 
     //Quad 4
     model = glm::mat4(1.0f);
-    model = glm::translate(model, glm::vec3(0.0f, 0.5f, 5.0f));
+    model = glm::translate(model, glm::vec3(0.0f, 0.5f, -1.0f));
     s_phong.set("model", model);
 
     normalMat = glm::inverse(glm::transpose(glm::mat3(model)));
