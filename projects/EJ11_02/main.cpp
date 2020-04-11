@@ -84,7 +84,7 @@ void render(const Geometry& floor, const Geometry& quads, const Shader& s_phong,
     glm::mat4 model = glm::mat4(1.0f);
     model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f));
     model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-    model = glm::scale(model, glm::vec3(10.0f, 10.0f, 10.0f));
+    model = glm::scale(model, glm::vec3(11.0f, 11.0f, 11.0f));
     s_phong.set("model", model);
     s_phong.set("view", view);
     s_phong.set("proj", proj);
@@ -108,7 +108,7 @@ void render(const Geometry& floor, const Geometry& quads, const Shader& s_phong,
 
     //Quad 1
     model = glm::mat4(1.0f);
-    model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
+    model = glm::translate(model, glm::vec3(0.0f,0.5f,-5.0f));
     s_phong.set("model", model);
 
     normalMat = glm::inverse(glm::transpose(glm::mat3(model)));
@@ -120,7 +120,7 @@ void render(const Geometry& floor, const Geometry& quads, const Shader& s_phong,
 
     //Quad 2
     model = glm::mat4(1.0f);
-    model = glm::translate(model, glm::vec3(0.0f, 1.0f, 0.0f));
+    model = glm::translate(model, glm::vec3(0.0f, 0.5f, -3.0f));
     s_phong.set("model", model);
     s_phong.set("type", 1);
 
@@ -133,7 +133,7 @@ void render(const Geometry& floor, const Geometry& quads, const Shader& s_phong,
 
     //Quad 3
     model = glm::mat4(1.0f);
-    model = glm::translate(model, glm::vec3(0.0f, 2.0f, 0.0f));
+    model = glm::translate(model, glm::vec3(0.0f, 0.5f, 1.0f));
     s_phong.set("model", model);
 
     normalMat = glm::inverse(glm::transpose(glm::mat3(model)));
@@ -145,7 +145,7 @@ void render(const Geometry& floor, const Geometry& quads, const Shader& s_phong,
 
     //Quad 4
     model = glm::mat4(1.0f);
-    model = glm::translate(model, glm::vec3(0.0f, 3.0f, 0.0f));
+    model = glm::translate(model, glm::vec3(0.0f, 0.5f, 5.0f));
     s_phong.set("model", model);
 
     normalMat = glm::inverse(glm::transpose(glm::mat3(model)));
@@ -167,7 +167,7 @@ int main(int, char* []) {
     const Texture t_wood_albedo("../assets/textures/wood_albedo.jpg", Texture::Format::RGB);
     const Texture t_wood_specular("../assets/textures/wood_specular.png", Texture::Format::RGB);
     const Quad quad(1.0f);
-    const Quad quads(1.0f);
+    const Quad quads(2.0f);
 
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
