@@ -33,6 +33,7 @@ class Camera {
         void handleKeyboard_EJ06_01(Movement direction, float dt);
         void handleMouseMovement(float xoffset, float yoffset, bool constrainPitch = true);
         void handleMouseScroll(float yoffset);
+        void directionCamera(float xoffset, float yoffset);
 
     private:
         void updateCameraVectors();

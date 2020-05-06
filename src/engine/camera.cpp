@@ -108,3 +108,10 @@ void Camera::handleMouseScroll(float yoffset) {
     if (_fov >= 45.0f) _fov = 45.0f;
 }
 
+void directionCamera(float xoffset, float yoffset) {
+    _yaw += xoffset;
+    _pitch += yoffset;
+
+    updateCameraVectors();
+}
+
