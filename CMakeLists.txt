@@ -30,8 +30,8 @@ set(ENGINE_SRC_FILES
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/geometry.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/quad.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/sphere.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/teapot.cpp)
-	${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/visor.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/teapot.cpp
+	${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/visor.cpp)
 
 set(ENGINE_HEADER_FILES
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/camera.hpp
