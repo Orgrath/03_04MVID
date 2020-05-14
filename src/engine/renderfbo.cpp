@@ -1,7 +1,6 @@
 #include "engine/renderfbo.hpp"
 
 #include <glad/glad.h>
-#include <iostream>
 
 RenderFBO::RenderFBO(int32_t width, int32_t height)
     : _width(width), _height(height){
@@ -47,7 +46,7 @@ void RenderFBO::DeleteFBO() {
     glDeleteRenderbuffers(1, &_rbo);
 }
 
-uint32_t RenderFBO::getFBO() const{
+uint32_t RenderFBO::getFBO() const {
     return _fbo;
 }
 

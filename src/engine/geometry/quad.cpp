@@ -35,3 +35,13 @@ Quad::Quad(float size) : _size(size) {
 
     uploadData(positions, uvs, normals, indices);
 }
+
+void Quad::setPosition(float xoffset, float yoffset) {
+    float positions[] = { xoffset, yoffset, 0.0f,    //upper right triangle
+                          xoffset, -yoffset, 0.0f,
+                          -xoffset, yoffset, 0.0f,
+
+                          xoffset, -yoffset, 0.0f,   //lower left triangle
+                          -xoffset, yoffset, 0.0f,
+                          -xoffset, -yoffset, 0.0f };
+}

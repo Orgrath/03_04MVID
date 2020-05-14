@@ -1,6 +1,8 @@
 #ifndef __RENDERFBO_H__
 #define __RENDERFBO_H__
 
+#include <iostream>
+
 class RenderFBO {
     public:
         RenderFBO(int32_t width, int32_t height);
@@ -15,8 +17,8 @@ class RenderFBO {
         void createFBO();
 
     private:
-        uint32_t _fbo; uint32_t _textureColor; uint32_t _rbo;
-        int32_t _width; int32_t _height;
+        uint32_t _fbo, _textureColor, _rbo;
+        int32_t _width, _height;
 };
 
 #endif
