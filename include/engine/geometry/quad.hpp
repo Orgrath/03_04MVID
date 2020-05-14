@@ -8,8 +8,6 @@ class Quad final: public Geometry {
         Quad() = delete;
         explicit Quad(float size);
 
-        void setPosition(float xoffset, float yoffset);
-
     private:
         float _size;
 };

@@ -1,10 +1,10 @@
-#include "engine/geometry/quad.hpp"
+#include "engine/geometry/visor.hpp"
 
-Quad::Quad(float size) : _size(size) {
+Visor::Visor(float position) : _position(position) {
     _nVertices = 1 * 2 * 3;  //1 face * 2 triangles * 3 vertices
     _nElements = _nVertices;
 
-    const float half = size / 2.0f;
+    const float half = position / 2.0f;
 
     float positions[] = { half, half, 0.0f,    //upper right triangle
                           half, -half, 0.0f,
