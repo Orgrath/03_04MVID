@@ -6,7 +6,8 @@
 class Quad final: public Geometry {
     public:
         Quad() = delete;
-        explicit Quad(float size);
+        Quad(float size);
+        Quad(float size, int8_t mode);
 
     private:
         float _size;
