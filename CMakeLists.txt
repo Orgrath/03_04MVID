@@ -24,6 +24,7 @@ set(ENGINE_SRC_FILES
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/texture.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/window.cpp
 	${CMAKE_CURRENT_LIST_DIR}/src/engine/renderfbo.cpp
+	${CMAKE_CURRENT_LIST_DIR}/src/engine/player.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/cube.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/cube_EJ05_02.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/cubepolar.cpp
@@ -41,6 +42,7 @@ set(ENGINE_HEADER_FILES
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/texture.hpp
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/window.hpp
 	${CMAKE_CURRENT_LIST_DIR}/include/engine/renderfbo.hpp
+	${CMAKE_CURRENT_LIST_DIR}/include/engine/player.hpp
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/geometry/cube.hpp
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/geometry/cube_EJ05_02.hpp
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/geometry/cubepolar.hpp
