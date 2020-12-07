@@ -6,44 +6,44 @@
 class Material {
     public:
         enum class Type {
-            gem = 0,
-            stone = 1,
-            metal = 2,
-            plastic = 3,
-            rubber = 4
+            plastic = 0,
+            rubber = 1
         };
 
         enum class Gem {
-            emerald = 1,
-            ruby = 2
+            emerald = 0,
+            ruby = 1
         };
 
         enum class Stone {
-            jade = 1,
-            obsidian = 2,
-            pearl = 3,
-            turquoise = 4
+            jade = 0,
+            obsidian = 1,
+            pearl = 2,
+            turquoise = 3
         };
 
         enum class Metal {
-            brass = 1,
-            bronze = 2,
-            chrome = 3,
-            copper = 4,
-            gold = 5,
-            silver = 6
+            brass = 0,
+            bronze = 1,
+            chrome = 2,
+            copper = 3,
+            gold = 4,
+            silver = 5
         };
 
         enum class Color {
-            black = 1,
-            white = 2,
-            red = 3,
-            green= 4,
-            yellow = 5,
-            cyan = 6
+            black = 0,
+            white = 1,
+            red = 2,
+            green= 3,
+            yellow = 4,
+            cyan = 5
         };
 
-        Material(Type type, Gem gem, Stone stone, Metal metal, Color plastic, Color rubber);
+        Material(Gem gem);
+        Material(Stone stone);
+        Material(Metal metal);
+        Material(Type type, Color color);
 
     private:            
         void assignGem(Gem gem);
