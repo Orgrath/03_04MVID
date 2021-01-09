@@ -4,23 +4,23 @@ out vec4 FragColor;
 
 in vec3 normal;
 in vec3 fragPos;
-//in vec2 uv;
+in vec2 uv;
 //in vec4 fragPosLighSpace;
 
-/*struct Material {
+struct Material {
     sampler2D diffuse;
     sampler2D specular;
-    int shininess;
+    //int shininess;
 };
-uniform Material material;*/
+uniform Material material;
 
 struct Light {
-    vec3 position;
+    //vec3 position;
     //vec3 direction;
 
     vec3 ambient;
-    /*vec3 diffuse;
-    vec3 specular;*/
+    //vec3 diffuse;
+    //vec3 specular;
 
     /*float constant;
     float linear;
@@ -92,6 +92,6 @@ void main() {
     vec3 phong = ambient + ((1.0 - shadow) * (diffuse + specular));
     FragColor = vec4(phong, 1.0f);*/
 
-    vec3 phong = ambient * vec3(1.0f, 0.0f, 0.0f);
+    vec3 phong = light.ambient * (vec3(texture(material.diffuse, uv)) + vec3(texture(material.specular, uv)));
     FragColor = vec4(phong, 1.0f);
 }

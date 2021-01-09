@@ -97,7 +97,7 @@ void Material::assignPlastic(Color plastic) {
 	_ambient = glm::vec3(0.0f, 0.0f, 0.0f);
 	_shininess = 0.25f;
 
-	switch (color) {
+	switch (plastic) {
 		case Color::black:
 			_diffuse = glm::vec3(0.01f, 0.01f, 0.01f),
 			_specular = glm::vec3(0.5f, 0.5f, 0.5f); break;
@@ -123,7 +123,7 @@ void Material::assignPlastic(Color plastic) {
 void Material::assignRubber(Color rubber) {
 	_shininess = 0.078125f;
 
-	switch (color) {
+	switch (rubber) {
 		case Color::black:
 			_ambient = glm::vec3(0.02f, 0.02f, 0.02f),
 			_diffuse = glm::vec3(0.01f, 0.01f, 0.01f),

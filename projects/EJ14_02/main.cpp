@@ -95,7 +95,7 @@ void renderScene(const Shader& shader,
     t_specular.use(shader, "material.specular", 1);
 
     glm::mat4 model = glm::mat4(1.0f);
-    model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f));
+    model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
     model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
     model = glm::scale(model, glm::vec3(10.0f, 10.0f, 10.0f));
     shader.set("model", model);

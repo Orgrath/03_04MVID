@@ -4,10 +4,7 @@
 #include <glm/glm.hpp>
 
 #include "engine/model.hpp"
-#include "engine/geometry/cube.hpp"
-
-const float k_Speed = 1.0f;
-uint32_t score = 0;
+#include "engine/geometry/quad.hpp"
 
 class Player {
 public:
@@ -18,21 +15,15 @@ public:
         Right = 3,
     };
 
-    Player(const Model& pj, Cube hitbox, float posX, float posY, float posZ, uint16_t lifes);
+    Player(Geometry hitbox, float posX, float posY, float posZ);
 
-    void handleKeyboard(Movement direction, float dt);
-    void updateLifes(int mode, uint16_t hits);
-    void updateScore(uint32_t points);
+    void handleKeyboard(Movement direction);
 
-    //Provisional
     Geometry getHitbox();
+    glm::vec3 getPoshitBox();
 
 private:
-    Model _pj;
-    Cube _hitbox;
-    glm::vec3 _position;
-    uint16_t _lifes;
-    uint32_t _score;
+    Geometry _hitbox;
+    glm::vec3 _position, _posHitbox, _colorHitbox;
 };
-
 #endif
