@@ -15,15 +15,17 @@ public:
         Right = 3,
     };
 
-    Player(Geometry hitbox, float posX, float posY, float posZ);
+    //Player(Geometry hitbox, float posX, float posY, float posZ);
+    Player(glm::vec3 pos);
 
-    void handleKeyboard(Movement direction);
+    void handleKeyboard(Movement direction, float dt);
+    void setHitbox(Geometry hitbox);
 
     Geometry getHitbox();
     glm::vec3 getPoshitBox();
 
 private:
     Geometry _hitbox;
-    glm::vec3 _position, _posHitbox, _colorHitbox;
+    glm::vec3 _position, _posHitbox, _colorHitbox, _vertical, _horizontal;
 };
 #endif
